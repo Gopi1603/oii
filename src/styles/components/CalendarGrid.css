@@ -1,0 +1,540 @@
+/* src/styles/components/CalendarGrid.css */
+
+.calendar-page {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.view-btn {
+  background: transparent;
+  border: none;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.view-btn--active {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent-purple);
+  font-weight: 600;
+}
+
+.calendar-page__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.calendar-page__title {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 0;
+  flex: 1;
+}
+
+.calendar-page__nav-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.small-btn {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.calendar-page__add-event {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.calendar-page__desc {
+  margin: 8px 0 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.weekday-row {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  margin-bottom: 8px;
+}
+
+.weekday-cell {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}
+
+
+
+
+
+
+
+
+
+
+/* — Tablet (≤ 768px) — */
+@media (max-width: 768px) {
+  .calendar-page {
+    padding: 16px;
+  }
+  .view-toggle {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .view-btn {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+  .calendar-page__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .calendar-page__title {
+    font-size: 32px;
+  }
+  .calendar-page__nav-btns {
+    order: 2;
+  }
+  .calendar-page__add-event {
+    position: static;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  .calendar-page__desc {
+    font-size: 13px;
+  }
+  .weekday-row {
+    margin-bottom: 6px;
+  }
+  .weekday-cell {
+    font-size: 11px;
+    padding: 6px 0;
+  }
+  /* make grid horizontally scrollable */
+  .calendar-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(100px, 1fr);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .calendar-grid > * {
+    scroll-snap-align: start;
+  }
+}
+
+/* — Mobile (≤ 480px) — */
+@media (max-width: 480px) {
+  .calendar-page {
+    padding: 12px;
+  }
+  .view-toggle {
+    gap: 4px;
+  }
+  .view-btn {
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+  .calendar-page__title {
+    font-size: 28px;
+  }
+  .small-btn {
+    padding: 2px;
+    font-size: 14px;
+  }
+  .calendar-page__add-event {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .calendar-page__desc {
+    font-size: 12px;
+  }
+  .weekday-cell {
+    font-size: 10px;
+    padding: 4px 0;
+  }
+  /* narrower columns on mobile */
+  .calendar-grid {
+    grid-auto-columns: minmax(80px, 1fr);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* src/styles/components/CalendarGrid.css */
+
+/* — Month header — */
+.month-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.month-header__title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--accent-purple);
+  margin: 0;
+}
+.ctrl-btn {
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.1s;
+}
+.ctrl-btn:hover {
+  color: var(--accent-purple);
+  transform: translateY(-2px);
+}
+
+/* — Actions (Add / All Events) — */
+.calendar-page__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.btn-sm {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-sm:hover {
+  background: var(--accent-purple);
+}
+/* outline variant */
+.btn-outline {
+  background: transparent;
+  color: var(--accent-purple);
+  border: 1px solid var(--accent-purple);
+}
+.btn-outline:hover {
+  background: var(--accent-purple);
+  color: #fff;
+}
+
+/* (rest of your existing styles remain unchanged) */
+
+/* Responsive tweaks for header */
+@media (max-width: 768px) {
+  .month-header__title { font-size: 36px; }
+  .ctrl-btn { font-size: 24px; }
+}
+@media (max-width: 480px) {
+  .month-header__title { font-size: 28px; }
+  .ctrl-btn { font-size: 20px; }
+}
+/* — Month header with arrows & buttons all in one line — */
+.month-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.month-header__title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--accent-purple);
+  margin: 0 16px;
+}
+
+.ctrl-btn {
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 24px;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.month-header__actions {
+  position: absolute;
+  right: 24px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: var(--accent-purple);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* — Centered description below header — */
+.calendar-page__desc {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 24px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+/* position context */
+.calendar-page {
+  position: relative;
+}
+
+/* top-left “Add event” */
+.btn-add-left {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+/* top-right “All Events” */
+.btn-all-right {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+/* Small button base */
+.btn-sm {
+  background: var(--accent-purple);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-sm:hover {
+  background: #6931c3;
+}
+
+/* Outline variant */
+.btn-outline {
+  background: transparent;
+  color: var(--accent-purple);
+  border: 2px solid var(--accent-purple);
+}
+.btn-outline:hover {
+  background: var(--accent-purple);
+  color: #fff;
+}
+/* ── Month header ───────────────────────────────────────────────────────── */
+
+.month-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;     /* center arrows+title */
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.month-header__title {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--accent-purple);   /* purple month */
+  margin: 0;
+}
+
+/* place the two action‑buttons at the right edge */
+.month-header__actions {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 8px;
+}
+
+/* small primary button */
+.btn-sm {
+  background: var(--accent-purple);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-sm:hover {
+  background: #6931c3;
+}
+
+/* outline variant */
+.btn-outline {
+  background: transparent;
+  color: var(--accent-purple);
+  border: 2px solid var(--accent-purple);
+}
+.btn-outline:hover {
+  background: var(--accent-purple);
+  color: #fff;
+}
+
+/* controls (prev/next) */
+.ctrl-btn {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+/* ── Month header edge buttons ─────────────────────────────────────────── */
+
+.month-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* center arrows + title */
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Shared edge positioning */
+.month-header__edge {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.month-header__edge--left {
+  left: 0;
+}
+
+.month-header__edge--right {
+  right: 0;
+}
+
+/* Outline button (All Events) */
+.btn-outline {
+  background: transparent;
+  color: var(--accent-purple);
+  border: 2px solid var(--accent-purple);
+  /* no background */
+}
+.btn-outline:hover {
+  background: var(--accent-purple);
+  color: #fff;
+}
+/* ── Mobile: force 7‑column grid instead of horizontal scroll ── */
+@media (max-width: 780px) {
+  .calendar-grid {
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    grid-auto-flow: row !important;
+    overflow-x: hidden !important;
+  }
+
+  /* make each cell more compact */
+  .calendar-grid .date-cell {
+    padding: 4px;
+    min-height: 60px;
+  }
+
+  /* shrink weekday labels slightly */
+  .weekday-row {
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+  }
+  .weekday-cell {
+    font-size: 10px;
+    padding: 2px 0;
+  }
+}
+/* at the very end of src/styles/components/CalendarGrid.css */
+
+/* ── Under 500px: keep arrows+title on row‑1, edge buttons row‑2 ── */
+@media (max-width: 500px) {
+  .month-header {
+    /* allow wrapping instead of stacking everything vertically */
+    flex-wrap: wrap;
+  }
+
+  /* make each edge‑button a flex item that spans half the width */
+  .month-header__edge {
+    position: static;      /* cancel the absolute positioning */
+    order: 1;              /* put both edges on the second row */
+    flex: 1;               /* each takes 50% of the line */
+    display: flex;         /* so we can justify their content */
+    margin-top: 8px;
+  }
+  /* left edge: left‑align */
+  .month-header__edge--left {
+    justify-content: flex-start;
+  }
+  /* right edge: right‑align */
+  .month-header__edge--right {
+    justify-content: flex-end;
+  }
+
+  /* arrows + title stay in the first row */
+  .ctrl-btn,
+  .month-header__title {
+    order: 0;  /* ensure they come before the edges */
+  }
+}

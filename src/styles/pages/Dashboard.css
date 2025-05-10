@@ -1,0 +1,39 @@
+.dashboard-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--accent-purple);
+}
+.contact-section .name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.contact-section p,
+.objective-section p {
+  margin: 4px 0;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.contact-section a {
+  color: var(--accent-purple);
+  text-decoration: none;
+}
+.contact-section a:hover {
+  text-decoration: underline;
+}
+.objective-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+.objective-section p {
+  font-size: 16px;
+}

@@ -1,0 +1,54 @@
+
+/* File: src/styles/global.css */
+:root {
+  --bg-light: #F5F5FA;
+  --bg-white: #FFFFFF;
+  --border-light: #E5E7EB;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6B7280;
+  --accent-purple: #7C3AED;
+  --accent-green: #10B981;
+  --accent-orange: #F6501E;
+  --notif-red: #EF4444;
+  --font-family: 'Inter', system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg-light);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+}
+
+.flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.p-6 { padding: 1.5rem; }
+.m-4 { margin: 1rem; }
+
+
+
+
+/* src/styles/global.css */
+/* …your existing variables & resets… */
+
+/* Base font-size for rem units */
+html {
+  font-size: 16px;
+}
+
+/* Slightly smaller on tablets */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Even smaller on mobile */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,561 @@
+/* src/styles/components/Sidebar.css */
+
+.sidebar {
+  width: 256px;
+  background: var(--bg-white);
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.sidebar__logo-img {
+  width: 32px;
+  height: 32px;
+}
+.sidebar__logo-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Navigation */
+.sidebar__nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sidebar__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.sidebar__nav-item--active {
+  background: #F5EBFF; /* var(--bg-light-purple) */
+  color: var(--accent-purple);
+}
+.sidebar__nav-icon {
+  width: 20px;
+  height: 20px;
+  /* replace with your SVG icon via background-image or inline SVG */
+}
+
+/* Search Pill */
+.sidebar__search {
+  margin: 32px 0;
+}
+.sidebar__search-pill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: #F3F4F6;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* Profile Section */
+.sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+.sidebar__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.sidebar__profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar__profile-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.sidebar__profile-email {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.sidebar__settings-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  /* replace with gear icon via background-image or inline SVG */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* — Tablet (≤768px) — */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    padding: 16px;
+  }
+  .sidebar__logo-text {
+    display: none;
+  }
+  .sidebar__logo-img {
+    width: 28px;
+    height: 28px;
+  }
+  .sidebar__nav-item {
+    font-size: 14px;
+    gap: 8px;
+    padding: 6px;
+  }
+  .sidebar__search {
+    display: none;
+  }
+  .sidebar__avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .sidebar__profile-name {
+    font-size: 13px;
+  }
+  .sidebar__profile-email {
+    font-size: 11px;
+  }
+}
+
+/* — Mobile (≤480px) — */
+@media (max-width: 480px) {
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 12px;
+    border-top: 1px solid var(--border-light);
+    border-right: none;
+  }
+  .sidebar__logo,
+  .sidebar__search,
+  .sidebar__profile {
+    display: none;
+  }
+  .sidebar__nav {
+    flex: 1;
+  }
+  .sidebar__nav ul {
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+  }
+  .sidebar__nav-item {
+    flex-direction: column;
+    padding: 4px;
+  }
+  .sidebar__nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+
+
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* PROFILE BOX ANIMATION WRAPPER */
+.sidebar__profile-link .sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+
+  /* combine a one‑time shake with an infinite border glow */
+  animation:
+    shake 0.6s ease-in-out 1,
+    borderGlow 2s ease-in-out infinite alternate;
+}
+
+/* HOVER: lift slightly */
+.sidebar__profile-link:hover .sidebar__profile {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* SHAKE (runs once) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+/* PULSING BORDER */
+@keyframes borderGlow {
+  from { border-color: transparent; }
+  to   { border-color: var(--accent-purple); }
+}
+/* in src/styles/components/Sidebar.css */
+
+.sidebar__profile-link {
+  text-decoration: none;
+  color: inherit;  /* so it doesn’t turn blue */
+}
+/* src/styles/components/Sidebar.css */
+
+/* ---------------- Desktop layout remains as is ---------------- */
+
+/* Override mobile behavior: Sidebar becomes hidden drawer */
+@media (max-width: 480px) {
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 240px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    background: var(--bg-white);
+  }
+  .sidebar.sidebar--open {
+    transform: translateX(0);
+  }
+}
+
+/* Hamburger in topbar */
+@media (max-width: 480px) {
+  .topbar__hamburger {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 16px;
+  }
+}
+/* Hide default mobile bottom nav */
+@media (max-width: 480px) {
+  .sidebar {
+    /* remove the old bottom nav rules if present */
+    position: fixed;
+    height: 100%;
+    bottom: auto;
+    border-top: none;
+  }
+}
+
+
+
+
+
+
+
+
+/* src/styles/components/Sidebar.css */
+
+/* — Mobile Drawer (≤480px) — */
+@media (max-width: 480px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    padding: 24px;
+    background: var(--bg-white);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  /* when “sidebar--open” is toggled on, slide it in */
+  .sidebar.sidebar--open {
+    transform: translateX(0);
+  }
+
+  /* keep logo, search pill, profile visible in drawer */
+  .sidebar__logo,
+  .sidebar__search,
+  .sidebar__profile {
+    display: flex;
+    margin-bottom: 24px;
+  }
+
+  /* nav items: vertical list */
+  .sidebar__nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .sidebar__nav-item {
+    flex-direction: row;
+    padding: 8px;
+  }
+}
+/* Base sidebar styling */
+.sidebar {
+  width: 256px;
+  background: var(--bg-white);
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  position: fixed;
+  top: 0; bottom: 0; left: 0;
+  z-index: 1000;
+}
+
+.sidebar--open {
+  transform: translateX(0);
+}
+
+/* Logo */
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sidebar__logo-img { width: 32px; height: 32px; }
+.sidebar__logo-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Nav */
+.sidebar__nav ul {
+  list-style: none;
+  margin: 32px 0;
+  padding: 0;
+  flex: 1;              /* fill middle */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sidebar__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.sidebar__nav-item--active,
+.sidebar__nav-item:hover {
+  background: var(--bg-light);
+  color: var(--accent-purple);
+}
+.sidebar__nav-icon {
+  width: 20px; height: 20px;
+  /* replace with your icon font or inline SVG */
+}
+
+/* Profile link */
+.sidebar__profile-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  animation:
+    shake 0.6s ease-in-out 1,
+    borderGlow 2s ease-in-out infinite alternate;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.sidebar__profile-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.sidebar__avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+}
+.sidebar__profile-info {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar__profile-name {
+  font-size: 14px; font-weight: 500; color: var(--text-primary);
+}
+.sidebar__profile-email {
+  font-size: 12px; font-weight: 400; color: var(--text-muted);
+}
+
+/* Shake + glowing border on profile */
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%,60% { transform: translateX(-4px); }
+  40%,80% { transform: translateX(4px); }
+}
+@keyframes borderGlow {
+  from { border-color: transparent; }
+  to   { border-color: var(--accent-purple); }
+}
+
+/* Hide default mobile bottom‐nav */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    padding: 16px;
+  }
+  .sidebar__logo-text { display: none; }
+  .sidebar__avatar      { width: 36px; height: 36px; }
+}
+/* Disable profile‐link animations on mobile/tablet */
+@media (max-width: 1968px) {
+  .sidebar__profile-link {
+    animation: none !important;
+  }
+}
+/* add at the top of src/styles/components/Sidebar.css */
+
+/* container open/closed, if you want slide-in/out */
+.sidebar {
+  width: 256px;
+  background: var(--bg-white);
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+.sidebar--open {
+  transform: translateX(0);
+}
+
+/* header row: logo + close button */
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.sidebar__logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+.sidebar__close-btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px;
+}
+
+/* spacer pushes profile to bottom */
+.sidebar__spacer {
+  flex: 1;
+}
+/* --------------------------------------------------  
+   Hamburger toggle button (any screen size)  
+-------------------------------------------------- */
+
+
+.hamburger-btn:hover {
+  background: var(--bg-light);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* three‑bar icon lines if you want to craft it in CSS */
+
+
+/* Example HTML you might use:
+<button class="hamburger-btn" onClick={...}>
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+*/
+/* in src/styles/components/Sidebar.css (or your global CSS) */
+
+/* ── Hamburger toggle button (all viewports) ── */
+.hamburger-btn {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  display: flex !important;
+  flex-direction: column !important;    /* stack bars vertically */
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  gap: 4px;                              /* space between the bars */
+  font-size: 24px;
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 1100;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.hamburger-btn .bar {
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+}
+.sidebar__nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+}

@@ -1,0 +1,160 @@
+/* src/styles/components/CalendarHeader.css */
+
+.calendar-header {
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* “Weekly” label */
+.calendar-header__label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-green);
+  letter-spacing: 0.5px;
+}
+
+/* Title */
+.calendar-header__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Details row: members/time + edit button */
+.calendar-header__details {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+}
+
+/* Each detail item */
+.calendar-header__detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Detail icons */
+.calendar-header__icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--text-muted);
+}
+
+/* Edit button */
+.calendar-header__edit-btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.calendar-header__edit-icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--text-secondary);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* — Tablet (≤ 768px) — */
+@media (max-width: 768px) {
+  .calendar-header {
+    padding: 16px;
+    gap: 8px;
+  }
+  .calendar-header__label {
+    font-size: 11px;
+  }
+  .calendar-header__title {
+    font-size: 20px;
+  }
+  .calendar-header__details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .calendar-header__detail-item {
+    font-size: 13px;
+  }
+  .calendar-header__edit-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* — Mobile (≤ 480px) — */
+@media (max-width: 480px) {
+  .calendar-header {
+    padding: 12px;
+    gap: 6px;
+  }
+  .calendar-header__label {
+    font-size: 10px;
+  }
+  .calendar-header__title {
+    font-size: 18px;
+  }
+  .calendar-header__details {
+    gap: 12px;
+  }
+  .calendar-header__detail-item {
+    font-size: 12px;
+    gap: 6px;
+  }
+  .calendar-header__icon {
+    width: 14px;
+    height: 14px;
+  }
+  .calendar-header__edit-btn {
+    padding: 4px 10px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .calendar-header__edit-icon {
+    width: 14px;
+    height: 14px;
+  }
+}

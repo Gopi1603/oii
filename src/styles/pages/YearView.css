@@ -1,0 +1,163 @@
+/* src/styles/pages/YearView.css */
+
+/* — Container — */
+.year-view {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--bg-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* — Breadcrumb — */
+.breadcrumb {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 16px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+.breadcrumb:hover {
+  color: var(--text-primary);
+}
+
+/* — Header with prev/next — */
+.year-view__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+/* Prev/Next buttons */
+.year-view__header .ctrl-btn {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--text-primary);
+  transition: background 0.2s, transform 0.2s;
+}
+.year-view__header .ctrl-btn:hover {
+  background: var(--accent-purple)10;
+  color: var(--accent-purple);
+  transform: scale(1.1);
+}
+
+/* — Year Title — */
+.year-view__title {
+  flex: 1;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--accent-purple);
+  margin: 0;
+}
+
+/* — Month Grid — */
+.year-view__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* — Month Card — */
+.year-view__month-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.year-view__month-card:hover {
+  background: var(--accent-purple)10;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* — Highlight Today — */
+.year-view__month-card--today {
+  border: 2px solid var(--accent-purple);
+  background: var(--accent-purple)10;
+}
+
+/* — Tablet (≤ 768px) — */
+@media (max-width: 768px) {
+  .year-view {
+    padding: 16px;
+  }
+  .breadcrumb {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .year-view__header {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 16px 0;
+    gap: 16px;
+  }
+  .year-view__header .ctrl-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .year-view__title {
+    font-size: 36px;
+  }
+  .year-view__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .year-view__month-card {
+    padding: 16px;
+    font-size: 14px;
+  }
+}
+
+/* — Mobile (≤ 480px) — */
+@media (max-width: 480px) {
+  .year-view {
+    padding: 12px;
+  }
+  .breadcrumb {
+    font-size: 12px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .year-view__header {
+    gap: 8px;
+  }
+  .year-view__header .ctrl-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .year-view__title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .year-view__grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+  }
+  .year-view__month-card {
+    flex: 0 0 120px;
+    padding: 12px;
+    font-size: 13px;
+  }
+}

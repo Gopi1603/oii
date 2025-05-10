@@ -1,0 +1,58 @@
+[
+  {
+    "date": "2025-05-04",
+    "startTime": "11:00",
+    "endTime": "11:30",
+    "color": "#F59E0B",
+    "title": "Project Planning"
+  },
+  {
+    "date": "2025-05-15",
+    "startTime": "00:00",
+    "endTime": "01:35",
+    "color": "#f6be23",
+    "title": "Daily Standup"
+  },
+  {
+    "date": "2025-05-15",
+    "startTime": "04:30",
+    "endTime": "07:30",
+    "color": "#f6501e",
+    "title": "Daily Catchup"
+  },
+  {
+    "date": "2025-05-18",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "color": "#10B981",
+    "title": "Team Sync"
+  },
+  {
+    "date": "2025-05-23",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "color": "#3B82F6",
+    "title": "Design Review"
+  },
+  {
+    "date": "2025-06-03",
+    "startTime": "10:00",
+    "endTime": "11:30",
+    "color": "#8B5CF6",
+    "title": "Client Kick‑off"
+  },
+  {
+    "date": "2025-06-20",
+    "startTime": "16:00",
+    "endTime": "17:00",
+    "color": "#EC4899",
+    "title": "Marketing Sync"
+  },
+  {
+    "date": "2026-07-16",
+    "startTime": "00:00",
+    "endTime": "23:59",
+    "color": "#FBBF24",
+    "title": "My Birthday"
+  }
+]

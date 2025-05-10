@@ -1,0 +1,17 @@
+.more-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.more-page p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}

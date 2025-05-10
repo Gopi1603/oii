@@ -1,0 +1,30 @@
+.messages-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--accent-purple);
+}
+.education-section,
+.skills-section {
+  margin-top: 24px;
+}
+.education-section h2,
+.skills-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.education-section ul,
+.skills-list {
+  list-style: disc inside;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.skills-list li {
+  margin-bottom: 4px;
+}

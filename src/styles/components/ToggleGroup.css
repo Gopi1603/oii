@@ -1,0 +1,57 @@
+.toggle-group {
+  display: flex;
+  gap: 12px;               /* 12px between pills */
+  margin-top: 16px;        /* 16px below details row */
+}
+
+.toggle-group__btn {
+  font-size: 14px;
+  font-weight: 500;        /* Medium */
+  color: var(--text-secondary);
+  background: #F9FAFB;      /* unselected */
+  border: 1px solid var(--border-light);
+  border-radius: 9999px;    /* pill */
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.toggle-group__btn--selected {
+  background: #F3E8FF;      /* selected */
+  color: var(--accent-purple);
+  border-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+/* — Tablet (≤768px) — */
+@media (max-width: 768px) {
+  .toggle-group {
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .toggle-group__btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+/* — Mobile (≤480px) — */
+@media (max-width: 480px) {
+  .toggle-group {
+    gap: 6px;
+    margin-top: 8px;
+    overflow-x: auto;
+  }
+  .toggle-group__btn {
+    font-size: 12px;
+    padding: 4px 8px;
+    flex: 0 0 auto;
+  }
+}

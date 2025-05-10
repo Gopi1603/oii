@@ -1,0 +1,120 @@
+/* src/styles/pages/EventsView.css */
+
+.events-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  background: var(--bg-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.events-page__breadcrumb {
+  margin-bottom: 12px;
+}
+.events-page__breadcrumb-link {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.events-page__breadcrumb-link:hover {
+  color: var(--text-primary);
+}
+
+.events-page__title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--accent-purple);
+}
+
+.events-page__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.events-page__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-bottom: 12px;
+}
+.events-page__item:hover {
+  transform: translateY(-2px);
+  background: var(--bg-light);
+}
+
+.events-page__item-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.events-page__date {
+  font-weight: 500;
+}
+.events-page__time {
+  font-weight: 400;
+}
+
+.events-page__item-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+/* — Tablet (≤ 768px) — */
+@media (max-width: 768px) {
+  .events-page {
+    padding: 16px;
+  }
+  .events-page__title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .events-page__item {
+    padding: 10px;
+  }
+  .events-page__item-meta {
+    gap: 12px;
+    font-size: 13px;
+  }
+  .events-page__item-title {
+    font-size: 15px;
+  }
+}
+
+/* — Mobile (≤ 480px) — */
+@media (max-width: 480px) {
+  .events-page {
+    padding: 12px;
+  }
+  .events-page__breadcrumb-link {
+    font-size: 12px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .events-page__title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  .events-page__item {
+    padding: 8px;
+  }
+  .events-page__item-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+  }
+  .events-page__item-title {
+    font-size: 14px;
+  }
+}
